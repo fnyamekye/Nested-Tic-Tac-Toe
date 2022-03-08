@@ -1,0 +1,201 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  padding: 0;
+}
+
+.overlay{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/* tittle section */
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 10rem;
+}
+
+/* new game button */
+.newGame{
+  width: 50%;
+  height: 2.5rem;
+  background-color: inherit;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0px 1.5px 5px rgb(0,0,0,0.5);
+  cursor: pointer;
+}
+
+
+/* player header */
+
+.player_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.player_x{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  color: white;
+  border: 4px solid #00632B;
+  background-color: #00632B;
+  transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+.player_x_inactive{
+  background-color: white;
+  color: black;
+}
+.player_o{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+  border: 4px solid #940B00;
+  border-left: 2px;
+  transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+.player_o_active{
+  background-color: #940B00;
+  color: white;
+}
+
+/* overlay grid */
+
+.overlayGridContainer{
+  display:grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, minmax(150px,1fr) );
+  grid-template-rows: repeat(3,minmax(150px,1fr));
+}
+
+.grid-item{
+  height: 100%;
+  width: 100%;
+  border: 1.5px solid white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.nested_grid-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 550;
+  font-size: 1.5rem;
+  border: 1px solid #000E61;
+
+}
+
+.instruction{
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+
+
+
+/* win indicator */
+
+.win_indicator{
+  grid-column: 1/4;
+  grid-row: 1/4;
+  background: #0f29388a;
+  color: white;
+  text-shadow: 2px 2px 5px rgb(0,0,0,0.5);
+  font-size: 3rem;
+  font-family: 'Courgette', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+  visibility: hidden;
+}
+
+.win_indicator_display{
+  z-index: 2;
+  visibility: visible;
+}
+.win_indicator_show{
+  visibility: visible;
+}
+
+
+/* nested Grid items */
+.nested_grid1{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.nested_grid2{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.nested_grid3{
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+.nested_grid4{
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.nested_grid5{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.nested_grid6{
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+.nested_grid7{
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.nested_grid8{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.nested_grid9{
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+/* media query for large screens */
+
+@media (min-width: 920px){
+  .overlay{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .title{
+    align-items: flex-start;
+    height: 200px;
+  }
+
+ 
+  .newGame{
+    width: 30%;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  }
+  .newGame:hover{
+    transform: scale(1.04);
+  }
+}
